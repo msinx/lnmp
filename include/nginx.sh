@@ -81,8 +81,9 @@ EOF
   # logrotate nginx log
   cat > /etc/logrotate.d/nginx << EOF
 ${wwwlogs_dir}/*nginx.log {
-  daily
-  rotate 5
+  monthly
+  size=50M
+  rotate 6  
   missingok
   dateext
   compress
